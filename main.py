@@ -10,10 +10,24 @@ templates = Jinja2Templates(directory="templates")
 
 @app.get("/")
 async def home(request: Request):
+
+    projects = [
+        {
+            "name": "Personal Portfolio",
+            "description": "Portfolio website built with FastAPI and Jinja2",
+            "status": "In Progress"
+        },
+        {
+            "name": "Network Scanner",
+            "description": "Network discovery and port scanning tool",
+            "status": "Planning"
+        },
+    ]
+
     return templates.TemplateResponse(
         request=request,
         name="index.html",
+        context={
+            "projects": projects
+        }
     )
-@app.get("/api/test")
-async def test():
-    return {"status": "ok"}
