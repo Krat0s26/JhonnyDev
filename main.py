@@ -14,3 +14,6 @@ async def home(request: Request):
         request=request,
         name="index.html",
     )
+@app.get("/api/test")
+async def test():
+    return {"status": "ok"}
