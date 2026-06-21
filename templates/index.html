@@ -55,11 +55,12 @@ href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.m
     <h2 class="text-center mb-4">About Me</h2>
  <h3>{{ message }}</h3>
     <p class="text-center">
-    Data Center and Networking Technician with 2+ years of experience supporting large-scale infrastructure projects. 
-    Skilled in fiber optics, Cat6 cabling, patch panels, testing, rack deployment, and network infrastructure.
-    Currently learning Linux, Python, FastAPI, and
-     Cisco Networking while developing automation and networking-focused projects.
+   Data Center Technician with experience in fiber optics,
+structured cabling, patch panels, MPO/LC connectivity,
+network troubleshooting and infrastructure deployment.
 
+Currently learning Python, FastAPI, Linux and Rust while
+building networking and automation projects.
     </p>
 </section>
 
@@ -171,37 +172,25 @@ href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.m
     <h2 class="text-center section-title">
         Certifications
     </h2>
+      <div class="row g-4 justify-content-center">
 
-    <div class="row g-4 justify-content-center">
+       {% for cert in certifications %}
+          <div class="col-md-6">
+          <div class="card h-100">
+              <div class="card-body text-center">
+                 <i class="bi bi-award-fill fs-1 mb-3"></i>
 
-        <div class="col-md-4">
-            <div class="card h-100 text-center p-4">
-                <div class="skill-icon">
-                    <i class="bi bi-patch-check"></i>
-                </div>
-
-                <h5>OSHA 10</h5>
-
-                <p>
-                    Construction Safety Certification
-                </p>
-            </div>
+                 <h4>{{ cert.name }}</h4>
+                 <p class="text-muted">
+                {{ cert.issuer }}
+                 </p>
+                  <p>
+                {{ cert.description }}
+                 </p>
         </div>
-
-        <div class="col-md-4">
-            <div class="card h-100 text-center p-4">
-                <div class="skill-icon">
-                    <i class="bi bi-award"></i>
-                </div>
-
-                <h5>OSHA 30</h5>
-
-                <p>
-                    Advanced Safety Training
-                </p>
-            </div>
-        </div>
-
+    </div>
+</div>
+{% endfor %}
     </div>
 
 </section>
@@ -269,7 +258,8 @@ href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.m
 
 
 <footer class="text-center py-4">
-    <p>© 2026 Jhonny Portillo</p>
+    <p>© 2026 Jhonny Portillo
+Built with FastAPI</p>
 </footer>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
